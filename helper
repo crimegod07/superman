@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+  
+    <title>Document</title>
+</head>
+<body>
+    <div id="nav-bar">
+        <ul>
+            <li><a href="#container">Home</a></li>
+            <li><a href="#news">Favourites</a></li>
+          </ul>
+    </div>
+    <div class="container">
+        <div class="display">
+<div class="text">
+            <p>SUPERHERO</p>
+        </div>
+        <div class="search">
+            <form   style="width:500px" >  
+                <input type="text" id="myInput" list="datalist"  class="s searchBox" placeholder="search superhero"/>
+                <datalist id="datalist"></datalist>
+
+                <button id="search" type="submit" value="search"><i class="fab fa-searchengin fa-2x"></i></button>
+            </form>
+      </div>
+        </div>
+    </div>
+    
+
+
+        
+        <script src="jquery-3.6.0.js"></script>
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/63ea98ab25.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+var searchBtn = $('#search');
+var input = $('#myInput');
+var dataList = $('#datalist');
+var heroDetails = $('#herodetails')
+
+
+function superHeroes(){
+  
+    for(let i=0; i<1; i++){
+
+    $.get("https://superheroapi.com/api.php/954174915474343/search/" + "i", function(response){
+        
+        for(let heroes of response.results){
+             var alldata =  heroes.name ;
+             var text = heroes.name;
+             dataList.append(`<option value="${alldata}">
+             ${text}
+        </option>`);
+            
+    }})}
+         
+}
+ for(let i=0; i<1; i++){
+     superHeroes();
+}
+
+
+function click1(){
+
+  //$('.container').remove();
+
+    $.get("https://superheroapi.com/api.php/954174915474343/search/" + input.val(), function(response){
+        
+        for(let hero of response.results){
+           var photos = hero.image
+            //console.log(photos);
+            
+            let p1 = "Name: " + " " +hero.name
+            let p2 = "Powerstat-Speed: " +hero.powerstats.speed  
+            let p3 = "Powerstat-power: " + hero.powerstats.power 
+            heroDetails.append(`
+            <div> 
+            <img src="${photos.url}">  
+            <button style="width: -webkit-fill-available;  height: 45px "> <i class="fas fa-heart"></i> </button>
+            </div>
+            <div> 
+            <p style="font-size : 42px "> ${p1} </p> 
+            <p style="font-size : 42px" > ${p2} </p> 
+             <p style="font-size : 42px">${p3}" </p> 
+             </div>
+            `)
+        }
+    })
+}
+
+searchBtn.click(click1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
