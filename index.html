@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navigation Bar        Navigation Bar           Navigation Bar          Navigation Bar -->
     <div id="nav-bar">
-        <ul>
-            <li><a id="home"> Home</a></li>
-            <li><a id="favList">Favourites</a></li>
-          </ul>
+      <ul>
+        <li><a id="home"> Home</a></li>
+        <li><a id="favList">Favourites</a></li>
+      </ul>
     </div>
+
+    <!-- Container                 Container                       Container                  Container -->
     <div class="container">
-        <div class="display">
-<div class="text">
-            <p>SUPERHERO</p>
+      <div class="display">
+        <div class="text">
+          <p>SUPERHERO</p>
         </div>
+        <!-- Search Container              Search Container                 Search Container            Search Container -->
         <div class="search">
-            <form   style="width:500px" >  
-                <input type="text" id="myInput" list="datalist"  class="s searchBox" placeholder="search superhero"/>
-                <datalist id="datalist"></datalist>
+          <form style="width: 500px">
+            <input
+              type="text"
+              id="myInput"
+              list="datalist"
+              class="s searchBox"
+              placeholder="search superhero"
+            />
+            <datalist id="datalist"></datalist>
 
-                <button id="search" type="button" value="search1"><i class="fab fa-searchengin fa-2x"></i></button>
-            </form>
+            <button id="search" type="button" value="search1">
+              <i class="fab fa-searchengin fa-2x"></i>
+            </button>
+          </form>
+        </div>
       </div>
-        </div>
     </div>
-    
-    
-        <div id="herodetails">
-              
-        </div>
 
-        <div id="favourites">
-            
-        </div>
-        <script src="jquery-3.6.0.js"></script>
-        
-        <script src="https://kit.fontawesome.com/63ea98ab25.js" crossorigin="anonymous"></script>
-        <script src="script.js"></script>
-</body>
+    <!-- HeroDetails           HeroDetails                  HeroDetails                   HeroDetails -->
+    <div id="herodetails"></div>
+
+    <!-- Favourites              Favourites                    Favourites                    Favourites -->
+    <div id="favourites"></div>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script
+      src="https://kit.fontawesome.com/63ea98ab25.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
